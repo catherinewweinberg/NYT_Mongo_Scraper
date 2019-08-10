@@ -1,0 +1,10 @@
+body,
+html {
+  background-image: url(../css/images/nyt2.png);
+  background-repeat: repeat;
+}
+h1 {
+  font-family: "Great Vibes", cursive;
+  text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.1);
+  font-size: 60px;
+}
