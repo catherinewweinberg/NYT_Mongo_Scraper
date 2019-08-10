@@ -3,8 +3,33 @@ html {
   background-image: url(../css/images/nyt2.png);
   background-repeat: repeat;
 }
-h1 {
+.jumbotron {
   font-family: "Great Vibes", cursive;
   text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.1);
   font-size: 60px;
+  background-color: black;
+  color: white;
+}
+.card {
+  background-color: #f2f2f2;
+  border-radius: 0;
+  margin: 20px 0;
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+}
+.card-header {
+  background-color: #ccebff;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+}
+.article-link {
+  color: black;
+}
+.navbar-brand {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.btn {
+  font-family: "Times New Roman", Times, serif;
+  margin: 5px;
 }
