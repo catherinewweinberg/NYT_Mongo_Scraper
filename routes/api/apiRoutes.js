@@ -51,16 +51,16 @@ router.get("/articles", function(req, res) {
     });
 });
 
-router.post("/articles/:id", function(req, res) {
-  Note.create(req.body).then(function(dbNote) {
-    return db.Article.findOneAndUpdate(
-      { _id: req.params.id },
-      {
-        note: dbNote._id
-      },
-      { new: true }
-    );
-  });
-});
+// router.post("/articles/:id", function(req, res) {
+//   Note.create(req.body).then(function(dbNote) {
+//     return db.Article.findOneAndUpdate(
+//       { _id: req.params.id },
+//       {
+//         note: dbNote._id
+//       },
+//       { new: true }
+//     );
+//   });
+// });
 
 module.exports = router;
