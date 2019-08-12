@@ -4,12 +4,12 @@ var mongoose = require("mongoose");
 var exphbs = require("express-handlebars");
 // Requiring all models
 // var db = require("./models");
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 // Initialize Express
 var app = express();
 var routes = require("./routes");
-console.log(routes);
+
 // Middleware
 // Morgan logger for logging requests
 app.use(logger("dev"));
