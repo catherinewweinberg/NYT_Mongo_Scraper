@@ -1,8 +1,8 @@
+var router = require("express").Router();
 var axios = require("axios");
 var cheerio = require("cheerio");
-var db = require("../../models");
+var { Headline, Note } = require("../../models");
 // Routes
-var router = require("express").Router();
 router.get("/scrape", function(req, res) {
   axios.get("https://www.nytimes.com/section/us").then(function(response) {
     var $ = cheerio.load(response.data);
@@ -26,7 +26,7 @@ router.get("/scrape", function(req, res) {
       });
 
       //saves into db
-      db.Headline.create(results)
+      Headline.create(results)
         .then(function(dbArticle) {
           console.log(dbArticle);
         })
@@ -42,7 +42,7 @@ router.get("/scrape", function(req, res) {
 
 // Getting all articles from the DB
 router.get("/articles", function(req, res) {
-  db.Headline.find({})
+  Headline.find({})
     .then(function(dbArticle) {
       res.json(dbArticle);
     })
@@ -52,7 +52,7 @@ router.get("/articles", function(req, res) {
 });
 
 router.post("/articles/:id", function(req, res) {
-  db.Note.create(req.body).then(function(dbNote) {
+  Note.create(req.body).then(function(dbNote) {
     return db.Article.findOneAndUpdate(
       { _id: req.params.id },
       {
